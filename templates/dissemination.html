@@ -61,7 +61,7 @@
                     <li class="list-group-item"><a href="text.html"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp&nbspText</a></li>
                     <li class="list-group-item"><a href="handlingcode.html"><span class="glyphicon glyphicon-compressed" aria-hidden="true"></span>&nbsp&nbspHandling code</a></li>
                     <li class="list-group-item"><a href="protectivemark.html"><span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>&nbsp&nbspProtective</a></li>
-                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>&nbsp&nbspMarking</a></li>
+                    <!---<li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>&nbsp&nbspMarking</a></li>-->
                     <li class="list-group-item"><a href="review.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp&nbspReview</a></li>
                     <li class="list-group-item"><a href="dissemination.html"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>&nbsp&nbspDissemination</a></li>
                     <li class="list-group-item"><a href="search.html"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp&nbspSearch</a></li>
@@ -93,20 +93,29 @@
 
                         <div class="pretty p-default p-curve"><input  type="radio" class="gCheck" name="0"><div class="state p-success-o"><label>OKEY</label></div></div> <div class="pretty p-default p-curve"> <input class="gCheck" data-toggle="modal" data-target="#myModal" type="radio" name="0"><div class="state p-danger-o"><label>EDIT</label></div></div>
                         
-                        <div id="myModal" class="modal fade" role="dialog">
+                        <div style="width:50%;margin-left:30%" id="myModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                             
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                     <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Modal Header</h4>
+                                    <h4 class="modal-title">Change protective marking</h4>
                                     </div>
                                     <div class="modal-body">
-                                    <p>Some text in the modal.</p>
+                                            
+                                        <h3>CLICK TO PROTECTIVE MARKING :</h3>
+                                        <ul class="protective-mark" id="protective-mark-id">
+                                            <li class="p_mark" dissemination_mark="0">RESTRICTED</li>
+                                            <li class="p_mark" dissemination_mark="1">CONFIDENTIAL</li>
+                                            <li class="p_mark" dissemination_mark="2">SECRET</li>
+                                            <li class="p_mark" dissemination_mark="3">TOP SECRET</li>
+                                        </ul>
+                                        <h3 id="temp_d_p">Protective mark is :</h3>       
                                     </div>
                                     <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" id="d_p_m" class="btn btn-success">Save</button>    
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             
@@ -114,14 +123,47 @@
                             </div>
                         <!--- protective mark check box end -->
                    
+                      <!-- Dissemination modal  box start -->
 
+                      <div style="width:50%;margin-left:30%" id="myModal1" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Change protective marking</h4>
+                            </div>
+                            <div class="modal-body">
+                                    
+                                <h3>CLICK TO PROTECTIVE MARKING :</h3>
+                                <ul class="protective-mark" id="protective-mark-id">
+                                    <li class="p_mark" dissemination_mark="0">RESTRICTED</li>
+                                    <li class="p_mark" dissemination_mark="1">CONFIDENTIAL</li>
+                                    <li class="p_mark" dissemination_mark="2">SECRET</li>
+                                    <li class="p_mark" dissemination_mark="3">TOP SECRET</li>
+                                </ul>
+                                <h3 id="temp_d_p">Protective mark is :</h3>       
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="d_p_m" class="btn btn-success">Save</button>    
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </div>
+
+
+
+                      <!-- Dissemination modal  box end -->
                     </div>
                     
                     <div class="col-md-3">
-                       <h3 style="border:2px solid red; display:inline-block;padding:5px" id="des_protect" disabled>SECRET</h3>
+                       <h3 style="border:2px solid red; display:inline-block;padding:5px" id="des_protect" disabled></h3>
                     </div>
                     <div id="dissemination-container">
-                       <!--  <div class="col-md-8">
+                        <!-- <div class="col-md-8">
                             <h4 >SUMMERY OF TEXT:</h4>
                         </div>
                         <div style="vertical-align:top" class="col-md-4">
@@ -141,7 +183,14 @@
                         </div>
                         <div class="col-md-12">
                             <textarea disabled style="width:70%">Detailed handling instruction</textarea>
-                        </div>-->
+                        </div>
+                        <div class="col-md-12"><h3>CAN THIS INFORMATION BE DISSEMINATED IN LINE WITH THE HANDLING CODE APPLIED: </h3><div class="pretty p-default p-curve"><input  type="radio" class="gCheck" name="0"><div class="state p-success-o"><label>OKEY</label></div></div> <div class="pretty p-default p-curve"> <input class="gCheck" data-toggle="modal" data-target="#myModal" type="radio" name="0"><div class="state p-danger-o"><label>EDIT</label></div></div><h3>ARE ADDITIONAL DETAILED HANDLING INSTRUCTIONS REQUIRED: </h3><div class="pretty p-default p-curve"><input  type="radio" class="gCheck" name="0"><div class="state p-success-o"><label>OKEY</label></div></div> <div class="pretty p-default p-curve"> <input class="gCheck" data-toggle="modal" data-target="#myModal" type="radio" name="0"><div class="state p-danger-o"><label>EDIT</label></div></div><h3>CAN THIS INFORMATION BE DISSEMINATED IN LINE WITH THE PROTECTIVE MARKING APPLIED: </h3><div class="pretty p-default p-curve"><input  type="radio" class="gCheck" name="0"><div class="state p-success-o"><label>OKEY</label></div></div> <div class="pretty p-default p-curve"> <input class="gCheck" data-toggle="modal" data-target="#myModal" type="radio" name="0"><div class="state p-danger-o"><label>EDIT</label></div></div></div>
+                    -->
+                    </div>
+                    <div class="col-md-12">
+                        <h5 style="display:inline-block;margin-right:20px">NAME : <span style="background-color:gray;padding:5px;margin-right:3px;color:white">AUTO NAME</span></h3>
+                        <h5 style="display:inline-block;margin-right:20px">TIME :<span style="background-color:gray;padding:5px;margin-right:3px;color:white">AUTO TIME</span></h3>
+                        <h5 style="display:inline-block;margin-right:20px">DATE :<span style="background-color:gray;padding:5px;margin-right:3px;color:white">AUTO DATE</span></h3>
                     </div>
                 </div>
              </div>

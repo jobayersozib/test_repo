@@ -338,11 +338,18 @@ textarea {
 }
 
 .protective-mark > li{
-    display:inline-block;
-    
-    border:2px solid black;
-    margin-left:-6px; 
+    display: inline-block;
+    border: 2px solid black;
+    margin-left: -6px;
+    padding: 12px;
+    padding-top:19px;
+    padding-bottom:19px;
 
+}
+
+
+.protective-mark > li:hover{
+    cursor: pointer
 }
 
 .protective-mark > li >a{
